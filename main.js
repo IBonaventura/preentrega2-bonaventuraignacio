@@ -33,6 +33,12 @@ function jugar() {
 
     // Mostramos los resultados anteriores
     mostrarResultadosAnteriores();
+    
+    // Ejemplo de uso de algunos métodos adicionales
+    const partidasGanadasUsuario = contarPartidasGanadasPorUsuario('¡Ganaste!');
+    console.log(`Número de partidas ganadas por el usuario: ${partidasGanadasUsuario}`);
+    const resultadoEmpate = resultados.some((resultado) => resultado === '¡Es un empate!');
+    console.log(`¿Ha habido al menos un empate? ${resultadoEmpate}`);
 }
 
 // Función para determinar el resultado del juego
@@ -82,6 +88,11 @@ function mostrarResultadosAnteriores() {
     } else {
         console.log("Aún no hay resultados anteriores.");
     }
+}
+
+// Ejemplo de uso de métodos adicionales
+function contarPartidasGanadasPorUsuario(resultadoBuscado) {
+    return resultados.filter((resultado) => resultado === resultadoBuscado).length;
 }
 
 // Iniciamos el juego
